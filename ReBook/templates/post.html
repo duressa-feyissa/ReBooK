@@ -1,0 +1,111 @@
+{% extends "index.html" %}
+{% block add_data %}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/post.css') }}">
+	<script src="{{ url_for('static', filename='js/post.js') }}"></script>
+{% endblock %}
+{% block content %}
+	<section id="search">
+		<div class="containers">
+			<div class="main-post">
+				<div class="uploading">
+					<form method="POST" action="">
+					{{ form.hidden_tag() }}
+					<div class="uploading-header">
+						<div class="uploader-image">
+							<a href="{{ url_for('Users', user_id=current_user.id) }}">
+							<img src="{{ image }}">
+							</a>
+						</div>
+						<div class="uploder-name">
+							<a href="{{ url_for('Users', user_id=current_user.id) }}">
+							<h2>{{ current_user.username }}</h2>
+							</a>
+							<span>{{ time.strftime('%b-%d-%Y') }}</span>
+						</div>
+					</div>
+					<div class="uploading-content">
+						<div class="u-title">
+						{% if form.title.errors %}
+							{{ form.title(class="form-control form-control-lg is-invalid") }}
+							<div class="invalid-feedback">
+								{% for error in form.title.errors %}
+									<span>{{ error }}</span>
+								{% endfor %}
+							</div>
+						{% else %}
+							{{ form.title(class="form-title", placeholder="Title") }}
+						{% endif %}
+						</div>
+						<div class="u-content">
+						{% if form.content.errors %}
+							{{ form.content(class="form-control form-control-lg is-invalid") }}
+							<div class="invalid-feedback">
+								{% for error in form.content.errors %}
+									<span>{{ error }}</span>
+								{% endfor %}
+							</div>
+						{% else %}
+							{{ form.content(class="form-content", placeholder="Content") }}
+						{% endif %}
+						</div>
+					</div>
+					<div class="uploading-tag">
+							{{ form.post(class="btn btn-outline-light", id="sub") }}
+					</div>
+					</form>
+				</div>
+				{% for post in posts %}
+				<div class="post">		
+					<div class="uploading-header">
+						<div class="uploader-image">
+							<a href="{{ url_for('Users', user_id=post.author.id) }}">
+							<img src="../static/images/{{ post.author.image }}">
+							</a>
+						</div>
+						<div class="uploder-name">
+							<a href="{{ url_for('Users', user_id=post.author.id) }}">
+							<h2>{{ post.author.username }}</h2>
+							</a>
+							<span>{{ post.date_posted.strftime('%b-%m-%Y') }}</span>
+						</div>
+					</div>
+					<div class="post-content">
+						<div class="p-title">
+							<h5>{{ post.title }}</h5>
+						</div>
+						<div class="p-content">
+							<p>{{ post.content }}</p>
+						</div>
+					</div>
+					<div class="reaction-tag">
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+			<div class="right-side-post">
+				<div class="profile">
+					<div class="profile-images">
+						<img src="{{ image }}">
+					</div>
+					<div class="profile-status">
+						<h6>1 follower</h6>
+						<p>1 following</p>
+					</div>
+				</div>
+				<br>
+				<div class="friends">
+					<div class="friend-legend">
+						<h2>Friends</h2>
+					</div>
+					<div class="friend">
+						<div class="friend-img">
+						</div>					
+						<div class="friend-name">
+							<h3></h3>
+						</div>	
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock content %}

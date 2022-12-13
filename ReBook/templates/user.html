@@ -1,0 +1,45 @@
+{% extends "index.html" %}
+{% block add_data %}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/user.css') }}">
+	<script src="{{ url_for('static', filename='js/user.js') }}"></script>
+{% endblock %}
+{% block content %}
+	<section id="search">
+		<div class="user-container">
+			<div class="user-image">
+				<img src="../static/images/{{ user.image }}">
+			</div>
+			<div class="user-name">
+				<h1>{{user.username | capitalize }}</h1>
+			</div>
+			<div class="user-status">
+				<div class="follow-unfollow">
+					<h3>{{ followers }} followers</h3>
+					<h3>{{ following }} following</h3>
+				</div>
+				<div class="user-span">
+				{% if current_user.id != user.id %}
+					{% if flag == 1 %}
+						<span>follow</span>
+					{% else %}
+						<span>unfollow</span>
+					{% endif %}
+				{% endif %}
+				</div>
+			</div>
+			<div class="user-bio">
+				<p>{{ user.bio }}</p>
+			</div>
+			{% if current_user.id != user.id %}
+			<div class="user-follow">
+				<button id="{{ user.id }}" class="follow">Follow</button>
+				<button id="{{ user.id }}" class="Unfollow">UnFollow</button>
+			</div>
+			{% else %}
+			<div class="user-follow">
+				<h3></h3>
+			</div>
+			{% endif %}
+		</div>
+	</section>
+{% endblock content %}

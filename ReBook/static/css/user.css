@@ -1,0 +1,139 @@
+div.user-container {
+	width: 35%;
+	min-width: 600px;
+	border: 1px solid wheat;
+	margin: 60px auto;
+	height: auto;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	flex-direction: column;
+	padding: 50px 20px 20px;
+	border-radius: 5%;
+	box-sizing: border-box;
+	background-color: #272727;
+	opacity: 0.7;
+}
+
+div.user-name {
+	width: 98%;
+	min-height: 40px;
+	margin: 15px auto 0px;
+	display: flex;
+	justify-content: center;
+}
+
+div.user-name h1 {
+	color: wheat;
+	font-family: "Raleway", sans-serif;
+}
+
+
+div.user-image {
+	min-height: 150px;
+	width: 98%;
+	margin: 2px auto;
+	display: flex;
+	justify-content: center;
+}
+
+div.user-image img {
+	width: 140px;
+	height: 140px;
+	border-radius: 50%;
+	border: none;
+}
+
+div.user-status {
+	width: 98%;
+	min-height: 60px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	color: wheat;
+	margin: auto auto 20px;
+	align-items: flex-start;
+}
+
+div.follow-unfollow {
+	margin: 3px auto;
+}
+
+div.user-span {
+	margin: auto;
+}
+
+div.follow-unfollow {
+	display: flex;
+	justify-content: center;
+}
+
+div.user-follow { 
+	width: 98%;
+	min-height: 60px;
+	display: flex;
+	justify-content: center;
+	color: wheat;
+	padding: 0px;
+	margin: 20px auto;
+	align-items: center;
+}
+
+div.user-bio {
+	width: 98%;
+	min-height: 80px;
+	margin: 2px auto;
+	border: 1px solid wheat;
+	text-align: center;
+	color: wheat;
+}
+
+div.follow-unfollow h3 {
+	margin: 0px 15px;
+	color: wheat;
+}
+
+
+div.user-follow button {
+	width: 100px;
+	border: 1px solid wheat;
+	text-align: center;
+	padding: 7px 5px;
+	border-radius: 13px;
+	margin: 0px 15px;
+}
+
+div.user-follow button:hover {
+	background-color: indianred;
+	color: white;
+}
+
+
+@media (max-width: 800px) {
+	div.user-container  {
+  		padding: 20px;
+  		min-width: 90%;
+	}
+
+	div.user-image img{
+		width: 100px;
+		height: 100px;
+	}
+
+	div.user-image {
+		min-height: 100px;		
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
