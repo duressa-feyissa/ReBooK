@@ -36,9 +36,25 @@
 				<button id="{{ user.id }}" class="Unfollow">UnFollow</button>
 			</div>
 			{% else %}
-			<div class="user-follow">
-				<h3></h3>
+			{% if current_user.is_authenticated %}
+			<div class="show-friens-all"><h1>Following</h1></div>
+			<div class="user-follow-class">
+			{% for u in user.followed %}
+			<div class="user-follow-1">
+				<div class="show-friends-img">
+					<a href="{{ url_for('Users', user_id=u.id) }}">
+						<img src="{{ url_for('static', filename='images/' + u.image) }}">
+					</a>
+				</div>
+				<div class="show-friends-name">
+					<a href="{{ url_for('Users', user_id=u.id) }}">
+						<h2>{{u.username | capitalize}}</h2>
+					</a>
+				</div>
 			</div>
+			{% endfor %}
+			</div>			
+			{% endif %}
 			{% endif %}
 		</div>
 	</section>

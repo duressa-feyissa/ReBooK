@@ -1,0 +1,59 @@
+{% extends "index.html" %}
+{% block add_data %}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/post.css') }}">
+{% endblock %}
+{% block content %}
+	<section id="search">
+		<div class="containers">
+			<div class="main-post">
+				<div class="uploading">
+					<form method="POST" action="" id="form_post">
+					{{ form.hidden_tag() }}
+					<div class="uploading-header">
+						<div class="uploader-image">
+							<a href="{{ url_for('Users', user_id=current_user.id) }}">
+							<img src="{{ image }}">
+							</a>
+						</div>
+						<div class="uploder-name">
+							<a href="{{ url_for('Users', user_id=current_user.id) }}">
+							<h2>{{ current_user.username | capitalize }}</h2>
+							</a>
+							<span>{{ time.strftime('%b-%d-%Y') }}</span>
+						</div>
+					</div>
+					<div class="uploading-content">
+						<div class="u-title">
+						{% if form.title.errors %}
+							{{ form.title(class="form-control form-control-lg is-invalid") }}
+							<div class="invalid-feedback">
+								{% for error in form.title.errors %}
+									<span>{{ error }}</span>
+								{% endfor %}
+							</div>
+						{% else %}
+							{{ form.title(class="form-title", placeholder="Title") }} 
+						{% endif %}
+						</div>
+						<div class="u-content">
+						{% if form.content.errors %}
+							{{ form.content(class="form-control form-control-lg is-invalid") }}
+							<div class="invalid-feedback">
+								{% for error in form.content.errors %}
+									<span>{{ error }}</span>
+								{% endfor %}
+							</div>
+						{% else %}
+							{{ form.content(class="form-content", placeholder="Content") }}
+						{% endif %}
+						</div>
+					</div>
+					<div class="uploading-tag">
+							{{ form.post(class="btn btn-outline-light", id="sub") }}
+					</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock content %}

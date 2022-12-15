@@ -17,10 +17,12 @@
 	<header>
 		<div class="topnav" >
 			<div class="header_left">
-				<div><a href="{{ url_for('mainRoute')}}">HOME</a></div>
 				{% if current_user.is_authenticated %}
-					<div><a href="">MY BOOK</a></div>
+					<div><a href="{{ url_for('mainRoute')}}">HOME</a></div>
+					<div><a href="{{ url_for('Posts')}}">BLOG</a></div>					
 					<div><a href="{{ url_for('Library')}}">LIBRARY</a></div>
+				{% else %}
+					<div><a href="{{ url_for('mainRoute')}}">HOME</a></div>
 				{% endif %}
 			</div>
 			<div class="header_right">
