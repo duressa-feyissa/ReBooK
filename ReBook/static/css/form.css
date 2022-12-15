@@ -131,6 +131,11 @@ input.form-control {
 	display: block;
 }
 
+.bio {
+	resize: none;
+	width: 100% !important;
+}
+
 div.logout {
 	display: flex;
 	justify-content: flex-end;

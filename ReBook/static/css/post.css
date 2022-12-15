@@ -6,8 +6,9 @@ div.containers {
  	align-items: flex-start;
  	padding: 4px;
  	flex-wrap: wrap;
- 	position: relative;
  	min-width: 400px;
+ 	overflow-y: auto;
+ 	position: relative;
 }
 
 div.main-post {
@@ -19,8 +20,10 @@ div.main-post {
 
 div.right-side-post {
  	height: 800px;
- 	border: 1px solid wheat;
  	min-width: 400px;
+ 	position: -webkit-sticky;
+ 	position: sticky;
+ 	top: 4;
 }
 
 div.uploading {
@@ -30,11 +33,32 @@ div.uploading {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	margin-bottom: 35px;
 	border-radius: 5%;
  	background-color: #272727;
  	opacity: 0.7;
  	min-height: 350px;
+}
+
+div.source {
+	width: 98%;
+	display: flex;
+ 	margin: 20px auto;
+ 	align-items: center;
+ 	justify-content: center;
+}
+
+a.make-friend {
+	margin: auto 20px;
+}
+
+a.make-friend img {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	object-fit: fill;
+	margin: 0px;
+	padding: 0px;
+	border: none;
 }
 
 div.post {
@@ -105,6 +129,17 @@ div.p-title {
 	color: whitesmoke;
 }
 
+div.approve {
+	min-width: 98%;
+	min-height: 30px;
+	border: 1px solid wheat;
+}
+
+div.p-title a {
+	color: whitesmoke;
+	text-decoration: none;
+}
+
 div.u-content {
 	min-width: 98%;
 	min-height: 40px;
@@ -130,34 +165,49 @@ div.uploading-tag, div.reaction-tag {
 div.profile {
 	min-width: 98%;
 	height: auto;
-	margin: 2px auto;
+	margin: 0px auto;
 	border: 1px solid wheat;
+ 	background-color: #272727;
+ 	opacity: 0.7;
+ 	border-radius: 5%;
 }
 
 div.profile-images {
 	min-width: 98%;
-	min-height: 100px;
-	border: 1px solid wheat;
+	height: auto;
 	padding: 10px auto;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	margin: 20px auto;
+}
+
+div.profile-name {
+	margin: auto auto 0px;
+	text-align: center;
+	color: whitesmoke;
+}
+
+div.profile-name h2{
+	margin-bottom: 0px;
 }
 
 div.profile-images img {
-	width: 140px;
-	height: 140px;
+	width: 110px;
+	height: 110px;
 	border: none;
 	border-radius: 50%;
+	opacity: 1 !important;
+	object-fit: fill;
 }
 
 div.profile-status {
 	min-width: 98%;
 	min-height: 60px;
-	border: 1px solid wheat;
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
+	color: whitesmoke;
 }
 
 div.friends {
@@ -165,12 +215,16 @@ div.friends {
 	min-height: 100px;
 	border: 1px solid wheat;
 	padding: auto;
+ 	background-color: #272727;
+ 	opacity: 0.7;
+ 	border-radius: 5%;
 }
 
 div.friend-legend {
 	min-width: 98%;
 	text-align: center;
 	margin: 10px auto;
+	color: whitesmoke;
 }
 
 div.friend {
@@ -180,20 +234,30 @@ div.friend {
 	padding: 8px;
 	justify-content: flex-start;
 	align-items: center;
-	border: 1px solid wheat;
 }
 
 div.friend-img {
+	margin: auto 25px;
+}
+
+div.friend-img img {
 	width: 65px;
 	height: 65px;
-	border: 1px solid wheat;
-	margin-right: 10px;
+	border-radius: 50%;
+	object-fit: fill;
+	border: none;
 }
 
 div.friend-name {
 	height: 65px;
-	border: 1px solid wheat;
-	min-width: 50%;	
+	min-width: 50%;
+	display: flex;
+	align-items: center;
+}
+
+div.friend-name a {
+	text-decoration: none;
+	color: whitesmoke;
 }
 
 .form-title, .form-content {
@@ -210,9 +274,18 @@ div.friend-name {
 @media (max-width: 800px) {
 	div.main-post {
 		margin-right: auto;
+		margin-left: auto;
 	}
 }
 
-
+@media (max-width: 1000px) {
+	div.right-side-post {
+		display: none;
+	}		
+	
+	div.containers {
+		overflow: inherit;
+	}
+}
 
 

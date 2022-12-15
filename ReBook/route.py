@@ -1,8 +1,8 @@
 from datetime import datetime
 from sqlalchemy import text
-from flask import render_template, request, jsonify, flash, redirect, url_for, request
+from flask import render_template, request, jsonify, flash, redirect, url_for, request, abort
 from ReBook import app, bcrypt, db
-from ReBook.form import RegistrationForm, LoginForm, UpdateAccountForm, MakePost
+from ReBook.form import RegistrationForm, LoginForm, UpdateAccountForm, MakePost, Search
 from ReBook.models import User, Book, Post
 from ReBook.parse import parse
 from flask_login import login_user, current_user, logout_user, login_required
@@ -102,11 +102,13 @@ def Account():
 			i.save(pic_path)
 		current_user.username = form.username.data
 		current_user.email = form.email.data
+		current_user.bio = form.bio.data
 		db.session.commit()
 		return redirect(url_for('Account'))
 	elif request.method == 'GET':
 		form.username.data = current_user.username
 		form.email.data = current_user.email
+		form.bio.data = current_user.bio
 	image_file = url_for('static', filename='images/' + current_user.image)
 	return render_template('account.html', title="Account", form=form, image=image_file)	
 
@@ -283,14 +285,23 @@ def Posts():
 	else:
 		posts = current_user.follow_posts()
 	form = MakePost()
+
+	following, followers = 0, 0
+	for u in current_user.followed:
+		following+=1
+	for u in current_user.followers:
+		followers+=1
+
 	if form.validate_on_submit():
 		post = Post(title=form.title.data, content=form.content.data,
 			user_id=current_user.id, date_posted=datetime.utcnow())
 		db.session.add(post)
 		db.session.commit()
-		return render_template('post.html', title="Post", image=image_file, form=form, post=posts, time=datetime.utcnow())	
-	return render_template('post.html', title="Post", form=form, image=image_file, posts=posts, time=datetime.utcnow())
-
+		form.title.data, form.content.data="", ""
+		render_template("blog.html", title="Post", image=image_file, form=form, 
+			post=posts, time=datetime.utcnow(), followers=followers, following=following)
+	return render_template("blog.html", title="Post", form=form, image=image_file,
+	 posts=posts, time=datetime.utcnow(), followers=followers, following=following)
 
 @app.route('/user/<int:user_id>')
 @login_required
@@ -333,19 +344,56 @@ def User_unfollow():
 		return	jsonify({'data': "Success"})
 	return jsonify({'data': 'failure'})
 
-@app.route('/x')
+@app.route("/post/<int:post_id>/delete", methods=['POST'])
 @login_required
-def xxxx():
-	x = 0
-	print(type(x))
-	for i in x:
-		print(i)
-	return "Hello"
+def delete_post(post_id):
+	post = Post.query.get_or_404(post_id)
+	if post.author != current_user:
+		abort(403)
+	db.session.delete(post)
+	db.session.commit()
+	return redirect(url_for('Posts'))
 
 
+@app.route("/post/<int:post_id>/update", methods=['GET', 'POST'])
+@login_required
+def update_post(post_id):
+	image_file = url_for('static', filename='images/' + current_user.image)
+	post = Post.query.get_or_404(post_id)
+	if post.author != current_user:
+		abort(403)
+	form = MakePost()
+	if form.validate_on_submit():
+		post.title = form.title.data
+		post.content = form.content.data
+		db.session.commit()
+		return redirect(url_for('Posts'))
+	elif request.method == 'GET':
+		form.title.data = post.title
+		form.content.data = post.content
+	return render_template("change.html", title="Post", form=form, image=image_file, time=datetime.utcnow())
 
 
+@app.route("/post/<int:post_id>", methods=['GET', 'POST'])
+@login_required
+def post(post_id):
+	image_file = url_for('static', filename='images/' + current_user.image)
+	post = Post.query.get_or_404(post_id)
+	if post.author != current_user:
+		abort(403)
+	return render_template("post.html", title="Post", post=post, image=image_file)
 
 
+@app.route("/search", methods=['GET', 'POST'])
+@login_required
+def Searcher():
+	image_file = url_for('static', filename='images/' + current_user.image)
+	users=[]
+	form = Search()
+	if form.validate_on_submit():
+		# filter(Videos.title.like("%"+query+"%")).all()
+		users = User.query.filter(User.username.like("%"+form.search.data+"%")).all()
+		return render_template("search.html", title="Search", image=image_file, form=form, time=datetime.utcnow(), users=users)
+	return render_template("search.html", title="Search", image=image_file, form=form, time=datetime.utcnow(), users=users)
 
 

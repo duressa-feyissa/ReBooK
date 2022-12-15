@@ -31,6 +31,7 @@ class LoginForm(FlaskForm):
 class UpdateAccountForm(FlaskForm):
 	username = StringField('Username', validators=[DataRequired(), Length(min=4, max=20)])
 	email = StringField('Email', validators=[DataRequired(), Email()])
+	bio = TextAreaField('Bio', validators=[Length(min=20, max=1024)])
 	picture = FileField('Profile Picture', validators=[FileAllowed(['jpg', 'png', 'jpeg'], 'Image only!')])
 	submit = SubmitField('Update')
 
@@ -50,3 +51,23 @@ class MakePost(FlaskForm):
 	title = StringField('Title', validators=[DataRequired()])
 	content = TextAreaField('Content', validators=[DataRequired()])
 	post = SubmitField('Post')
+
+
+class Search(FlaskForm):
+	search = StringField('Search User', validators=[DataRequired()])
+	find = SubmitField('Search')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

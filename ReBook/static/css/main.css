@@ -6,6 +6,7 @@ body {
 	background-repeat: no-repeat;
 	background-size: 100%, 100%;
 	background-color: #292929;
+	overflow-y: auto;
 }
 
 header {
@@ -240,10 +241,12 @@ div.desc .read_more:hover {
 }
 
 div.popup-container {
+	margin-top: 50px;
 	margin-right: auto;
 	margin-left: auto;
-    position: sticky;
-    top: 10%;
+ 	position: -webkit-sticky;
+ 	position: sticky;
+    top: 80px;
 	max-width: 750px;
 	display: flex;
 	flex-wrap: wrap;
