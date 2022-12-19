@@ -260,6 +260,19 @@ div.friend-name a {
 	color: whitesmoke;
 }
 
+div.post_by_user {
+	margin: 10px auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+ 	background-color: #272727;
+ 	opacity: 0.7;
+}
+
+div.post_by_user  h2 {
+	color: wheat;
+}
+
 .form-title, .form-content {
 	color: white;
 	width: 100%;
@@ -269,6 +282,12 @@ div.friend-name a {
 .form-content {
 	resize: none;
 	height: 100px;
+}
+
+div.pagination {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 @media (max-width: 800px) {

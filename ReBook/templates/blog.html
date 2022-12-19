@@ -57,7 +57,7 @@
 					<a class="make-friend" href="{{ url_for('Searcher') }}" title="Search For User"><img src="{{ url_for('static', filename='images/' + 'followers.png') }}"></a>
 					<a class="make-friend" href="{{ url_for('Library') }}" title="Go To Library"><img src="{{ url_for('static', filename='images/' + 'read.png') }}"></a>
 				</div>
-				{% for post in posts %}
+				{% for post in posts.items %}
 				<div class="post">		
 					<div class="uploading-header">
 						<div class="uploader-image">
@@ -86,6 +86,19 @@
 					</div>
 				</div>
 				{% endfor %}
+				<div class="pagination">
+					{% for page in posts.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+						{% if page %}
+							{% if posts.page == page %}
+								<a class="btn btn-outline-info m-1" href="{{ url_for('Posts', page=page) }}">{{ page }}</a>
+							{% else %}
+								<a class="btn btn-outline-secondary m-1" href="{{ url_for('Posts', page=page) }}">{{ page }}</a>
+							{% endif %}
+      					{% else %}
+        					...
+      					{% endif %}
+    				{% endfor %}
+    			</div>
 			</div>
 			<div class="right-side-post">
 				<div class="profile">

@@ -81,8 +81,8 @@ div.user-follow {
 
 div.user-bio {
 	width: 98%;
-	min-height: 80px;
-	margin: 2px auto;
+	min-height: 50px;
+	margin: 2px auto 20px;
 	text-align: center;
 	color: wheat;
 }
@@ -113,6 +113,33 @@ div.user-follow-class {
 	width: 100%;
 	margin: 10px auto;
 }
+
+div.post_user {
+	margin: 0px auto 35px;
+}
+
+div.post_user a {
+	text-decoration: none;
+	color: black;
+	background-color: white;
+	opacity: 0.8;
+	width: 200px;
+	border: 2px solid #444;
+	border-radius: 10px;
+	font-size: 16px;
+	font-family: "Raleway", sans-serif;
+  	padding: 12px 40px 12px 40px;
+  	text-align: center;
+  	margin: auto;
+}
+
+div.post_user a:hover {
+	background-color: indianred;
+	color: white;
+	opacity: 0.9;
+	border: 2px solid wheat;
+}
+
 
 div.show-friens-all {
 	color: wheat;

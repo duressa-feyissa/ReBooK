@@ -1,6 +1,7 @@
 from datetime import datetime
 from ReBook import db, login_manager
 from flask_login import UserMixin
+from flask import request
 
 @login_manager.user_loader
 def load_user(user_id):
@@ -66,11 +67,14 @@ class User(db.Model, UserMixin):
 		return self.followed.filter(followers.c.followed_id == user.id).count() > 0
 
 	def follow_posts(self):
+
+		page = request.args.get('page', 1, type=int)
+
 		followed = Post.query.join(
 			followers, (followers.c.followed_id == Post.user_id)).filter(
 				followers.c.follower_id == self.id)
 		own = Post.query.filter_by(user_id=self.id)
-		return followed.union(own).order_by(Post.date_posted.desc())
+		return followed.union(own).order_by(Post.date_posted.desc()).paginate(page=page, per_page=25)
 
 
 class Book(db.Model):

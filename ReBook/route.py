@@ -276,12 +276,13 @@ def Track_reading():
 @app.route('/post', methods=['GET', 'POST'])
 @login_required
 def Posts():
+	page = request.args.get('page', 1, type=int)
 	image_file = url_for('static', filename='images/' + current_user.image)
 	count = 0
-	for i in current_user.follow_posts():
+	for i in current_user.follow_posts().items:
 		count += 1
 	if count < 1:
-		posts = Post.query.all()
+		posts = Post.query.order_by(Post.date_posted.desc()).paginate(page=page, per_page=25)
 	else:
 		posts = current_user.follow_posts()
 	form = MakePost()
@@ -299,9 +300,21 @@ def Posts():
 		db.session.commit()
 		form.title.data, form.content.data="", ""
 		render_template("blog.html", title="Post", image=image_file, form=form, 
-			post=posts, time=datetime.utcnow(), followers=followers, following=following)
+			posts=posts, time=datetime.utcnow(), followers=followers, following=following, page=page)
 	return render_template("blog.html", title="Post", form=form, image=image_file,
-	 posts=posts, time=datetime.utcnow(), followers=followers, following=following)
+	 posts=posts, time=datetime.utcnow(), followers=followers, following=following, page=page)
+
+
+@app.route("/user/<string:username>")
+@login_required
+def User_Posts(username):
+	image_file = url_for('static', filename='images/' + current_user.image)
+	page = request.args.get('page', 1, type=int)
+	user = User.query.filter_by(username=username).first_or_404()
+	posts = Post.query.filter_by(author=user).order_by(
+		Post.date_posted.desc()).paginate(page=page, per_page=8)
+	return render_template('user_post.html', posts=posts, image=image_file, user=user)
+
 
 @app.route('/user/<int:user_id>')
 @login_required
@@ -395,5 +408,6 @@ def Searcher():
 		users = User.query.filter(User.username.like("%"+form.search.data+"%")).all()
 		return render_template("search.html", title="Search", image=image_file, form=form, time=datetime.utcnow(), users=users)
 	return render_template("search.html", title="Search", image=image_file, form=form, time=datetime.utcnow(), users=users)
+
 
 

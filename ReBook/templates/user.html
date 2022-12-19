@@ -30,6 +30,9 @@
 			<div class="user-bio">
 				<p>{{ user.bio }}</p>
 			</div>
+			<div class="post_user">
+				<a href="{{ url_for('User_Posts', username=user.username) }}">Posts</a>
+			</div>
 			{% if current_user.id != user.id %}
 			<div class="user-follow">
 				<button id="{{ user.id }}" class="follow">Follow</button>
