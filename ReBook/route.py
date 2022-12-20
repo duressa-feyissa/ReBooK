@@ -319,6 +319,7 @@ def User_Posts(username):
 @app.route('/user/<int:user_id>')
 @login_required
 def Users(user_id):
+	page = request.args.get('page', 1, type=int)
 	user = User.query.get_or_404(user_id)
 	image_file = url_for('static', filename='images/' + current_user.image)
 	following, followers, flag = 0, 0, 0
@@ -328,8 +329,12 @@ def Users(user_id):
 		if u.id == current_user.id:
 			flag = 1
 		followers+=1
+
+	user_followed = user.followed.paginate(per_page=20, page=page)
+
 	return render_template('user.html', title="User", image=image_file, 
-		following=following, user=user, followers=followers, flag=flag)
+		following=following, user=user, followers=followers, flag=flag,
+		user_followed=user_followed)
 
 
 @app.route('/follow', methods=['POST'])

@@ -189,6 +189,14 @@ div.show-friends-name a {
 	color: wheat;
 }
 
+div.pagination {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
 @media (max-width: 800px) {
 	div.user-container  {
   		padding: 20px;

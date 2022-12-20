@@ -39,25 +39,40 @@
 				<button id="{{ user.id }}" class="Unfollow">UnFollow</button>
 			</div>
 			{% else %}
-			{% if current_user.is_authenticated %}
-			<div class="show-friens-all"><h1>Following</h1></div>
-			<div class="user-follow-class">
-			{% for u in user.followed %}
-			<div class="user-follow-1">
-				<div class="show-friends-img">
-					<a href="{{ url_for('Users', user_id=u.id) }}">
-						<img src="{{ url_for('static', filename='images/' + u.image) }}">
-					</a>
+				{% if current_user.is_authenticated %}
+				<div class="show-friens-all"><h1>Following</h1></div>
+				<div class="user-follow-class">
+					{% for u in user_followed.items %}
+					<div class="user-follow-1">
+						<div class="show-friends-img">
+							<a href="{{ url_for('Users', user_id=u.id) }}">
+								<img src="{{ url_for('static', filename='images/' + u.image) }}">
+							</a>
+						</div>
+						<div class="show-friends-name">
+							<a href="{{ url_for('Users', user_id=u.id) }}">
+								<h2>{{u.username | capitalize}}</h2>
+							</a>
+						</div>
+					</div>
+					{% endfor %}
 				</div>
-				<div class="show-friends-name">
-					<a href="{{ url_for('Users', user_id=u.id) }}">
-						<h2>{{u.username | capitalize}}</h2>
-					</a>
-				</div>
-			</div>
-			{% endfor %}
-			</div>			
-			{% endif %}
+
+				<div class="pagination">
+					{% for page in user_followed.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+						{% if page %}
+							{% if user_followed.page == page %}
+								<a class="btn btn-outline-info m-1" href="{{ url_for('Users', user_id=user.id, page=page) }}">{{ page }}</a>
+							{% else %}
+								<a class="btn btn-outline-secondary m-1" href="{{ url_for('Users', user_id=user.id, page=page) }}">{{ page }}</a>
+							{% endif %}
+      					{% else %}
+        					...
+      					{% endif %}
+    				{% endfor %}
+    			</div>	
+
+				{% endif %}
 			{% endif %}
 		</div>
 	</section>

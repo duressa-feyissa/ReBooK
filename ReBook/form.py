@@ -4,6 +4,7 @@ from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationE
 from ReBook.models import User
 from flask_wtf.file import FileField, FileRequired, FileAllowed
 from flask_login import current_user
+import requests
 
 class RegistrationForm(FlaskForm):
 	username = StringField('Username', validators=[DataRequired(), Length(min=4, max=20)])
@@ -21,6 +22,13 @@ class RegistrationForm(FlaskForm):
 		user = User.query.filter_by(email=email.data).first()
 		if user:
 			raise ValidationError('That email is taken!')
+		response = response = requests.get(
+			"https://isitarealemail.com/api/email/validate", 
+			params={'email': email.data})
+		status = response.json()['status']
+		if status == 'invalid':
+			raise ValidationError('The email doesn\'t exists!')
+
 
 class LoginForm(FlaskForm):
 	email = StringField('Email', validators=[DataRequired(), Email()])
