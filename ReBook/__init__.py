@@ -11,8 +11,8 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqldb://shupi:Dureti@localhost/
 app.config['MAIL_SERVER'] = 'smtp.googlemail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = 'duresafeyisa2014@gmail.com'
-app.config['MAIL_PASSWORD'] = 'dyvgkkeqtcauksrb'
+app.config['MAIL_USERNAME'] = ''
+app.config['MAIL_PASSWORD'] = ''
 
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
