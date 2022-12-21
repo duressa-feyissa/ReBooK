@@ -1,0 +1,95 @@
+div.about-container {
+	width: 35%;
+	min-width: 600px;
+	border: 1px solid wheat;
+	margin: 60px auto;
+	height: auto;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	flex-direction: column;
+	padding: 50px 20px 20px;
+	border-radius: 5%;
+	background-color: #272727;
+	opacity: 1;
+}
+
+div.designers {
+	width: 100%;
+}
+
+div.about-legend {
+	text-align: center;
+	width: 100% !important;
+	color: wheat;
+}
+
+div.teams {
+	color: wheat;
+	display: flex;
+	justify-content: center;
+}
+
+div.about-description {
+	margin: 30px auto 20px;
+	color: white;
+	text-align: justify;
+	width: 100%;
+}
+
+div.designer-img {
+	margin: 0px;
+	padding: 0px;
+	height: auto;
+	width: auto;
+}
+
+div.designer-img img{
+	width: 70px;
+	height: 70px;
+	object-fit: fill;
+	border-radius: 50%;
+	opacity: 1 !important;
+	border: none;
+}
+
+div.designer-info {
+	color: white;
+	margin: auto 10px;
+}
+
+div.designers-all {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	width: 100%;
+	margin: 30px auto;
+}
+
+div.designer {
+	display: flex;
+}
+
+div.contact {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+div.contact a {
+	margin: 30px 10px;
+	color: white;
+}
+
+@media (max-width: 800px) {
+	div.about-container  {
+  		padding: 20px;
+  		min-width: 90%;
+  		border: none;
+	}
+
+	div.about-legend {
+		margin-top: 20px;
+	}
+}

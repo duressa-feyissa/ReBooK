@@ -1,0 +1,10 @@
+{% extends "index.html" %}
+{% block add_data %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/user.css') }}">
+{% endblock %}
+{% block content %}
+    <div class="content-section">
+        <h1>Something went wrong (500)</h1>
+        <p>We're experiencing some trouble on our end. Please try again in the near future</p>
+    </div>
+{% endblock content %}

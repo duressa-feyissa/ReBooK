@@ -1,0 +1,55 @@
+{% extends "index.html" %}
+{% block content %}
+	<div class="content-section"> 
+		<form method="POST" action="">
+			{{ form.hidden_tag() }}
+			<fieldset>
+				<legend class="mt-2 mb-4"> <h1>Login</h1> </legend>
+				<div class="form-group">
+					{{ form.email.label(class="form-control-label") }}
+
+					{% if form.email.errors %}
+						{{ form.email(class="form-control form-control-lg is-invalid") }}
+						<div class="invalid-feedback">
+							{% for error in form.email.errors %}
+								<span>{{ error }}</span>
+							{% endfor %}
+						</div>
+					{% else %}
+						{{ form.email(class="form-control form-control-lg") }}
+					{% endif %}
+				</div>
+				<div class="form-group">
+					{{ form.password.label(class="form-control-label") }}
+
+					{% if form.password.errors %}
+						{{ form.password(class="form-control form-control-lg is-invalid") }}
+						<div class="invalid-feedback">
+							{% for error in form.password.errors %}
+								<span>{{ error }}</span>
+							{% endfor %}
+						</div>
+					{% else %}
+						{{ form.password(class="form-control form-control-lg") }}
+					{% endif %}
+				</div>
+				<div class="form-check mt-3 mb-3">
+					{{ form.remember(class="form-check-input mt-2") }}
+					{{ form.remember.label(class="form-check-label")}}
+				</div>
+			</fieldset>
+			<div class="form-group">
+				{{ form.submit(class="btn btn-outline-info") }}
+			</div>
+			<small class="text-light ml-2">
+				<a href="{{ url_for('users.reset_request') }}" class="text-primary">Forget Password?</a>				
+			</small>
+		</form>
+
+		<div class="mt-2 mb-2">
+			<small class="text-light">
+			Need An Account <a class="ml-2 text-primary" href="{{ url_for('users.Register')}}">Sign Up Now</a>
+			</small>
+		</div>
+	</div>
+{% endblock content %}

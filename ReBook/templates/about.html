@@ -1,0 +1,54 @@
+{% extends "index.html" %}
+{% block add_data %}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{% endblock %}
+{% block content %}
+	<section id="search">
+		<div class="about-container">
+			<div class="designers">
+				<div class="about-legend">
+					<h1>About Us</h1>
+				</div>
+				<div class="about-description">
+					<h5>ReBook provide an extensible access for users to find the book they really need. Based on the taste of the user and additional questionnaires, the platform will recommend the best book relevant to the need based on reviews by other readers. Additionally, the site will also provide a source to get the book in soft copy, based on the users preference.</h5>
+					<br/>
+					<h5>ReBook additional provide a blog post site and library for each user who has ReBook account.</h5>
+					<br/>
+					<h5>ReBook build for ALX portfolio project!</h5>
+					<br/>
+					<h5>Get the book you always wanted.</h5>
+					<br/>
+				</div>
+				<div class="teams">
+					<h2>Teams</h2>
+				</div>
+				<div class="designers-all">
+					<div class="designer">
+						<div class="designer-img">
+							<img src="{{ url_for('static', filename='images/' + 'duresa.jpg') }}">
+						</div>
+						<div class="designer-info">
+							<h5>Duresa Feyisa</h5>
+							<p>Backend</p>
+						</div>
+					</div>
+					<div class="designer">
+						<div class="designer-img">
+							<img src="{{ url_for('static', filename='images/' + 'biserat.jpg') }}">
+						</div>
+						<div class="designer-info">
+							<h5>Biserat Kebere</h5>
+							<p>Fronted</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="contact">
+				<a href="mailto:duresafeyisa2014@gmail.com"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+				<a href="https://www.facebook.com/profile.php?id=100084706242764"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+				<a href="https://t.me/brebook"><i class="fa fa-telegram" aria-hidden="true"></i></a>
+			</div>
+		</div>
+	</section>
+{% endblock content %}

@@ -1,0 +1,55 @@
+{% extends "index.html" %}
+{% block add_data %}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/user_post.css') }}">
+{% endblock %}
+{% block content %}
+	<section id="search">
+		<div class="containers">
+			<div class="main-post">
+				<div class="post_by_user">
+					<h2>Posts by {{ user.username | capitalize }} ({{ posts.total }})</h2>
+				</div>
+				{% for post in posts.items %}
+				<div class="post">		
+					<div class="uploading-header">
+						<div class="uploader-image">
+							<a href="{{ url_for('users.Users', user_id=post.author.id) }}">
+							<img src="../static/images/{{ post.author.image }}">
+							</a>
+						</div>
+						<div class="uploder-name">
+							<a href="{{ url_for('users.Users', user_id=post.author.id) }}">
+							<h2>{{ post.author.username  | capitalize }}</h2>
+							</a>
+							<span>{{ post.date_posted.strftime('%b-%m-%Y') }}</span>
+						</div>
+					</div>
+					<div class="post-content">
+						<div class="p-title">
+							<h4>{{ post.title }}</h4>
+						</div>
+						<div class="p-content">
+							<p>{{ post.content }}</p>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+
+				<div class="pagination">
+					{% for page in posts.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+						{% if page %}
+							{% if posts.page == page %}
+								<a class="btn btn-outline-info m-1" href="{{ url_for('users.User_Posts', username=user.username, page=page) }}">{{ page }}</a>
+							{% else %}
+								<a class="btn btn-outline-secondary m-1" href="{{ url_for('Users.User_Posts', username=user.username, page=page) }}">{{ page }}</a>
+							{% endif %}
+      					{% else %}
+        					...
+      					{% endif %}
+    				{% endfor %}
+    			</div>
+			</div>
+		</div>
+	</section>
+
+{% endblock content %}

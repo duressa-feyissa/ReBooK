@@ -1,0 +1,68 @@
+{% extends "index.html" %}
+{% block add_data %}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/post.css') }}">
+{% endblock %}
+{% block content %}
+	<section id="search">
+		<div class="containers">
+			<div class="main-post">
+				<div class="post">		
+					<div class="uploading-header">
+						<div class="uploader-image">
+							<a href="{{ url_for('users.Users', user_id=post.author.id) }}">
+							<img src="../static/images/{{ post.author.image }}">
+							</a>
+						</div>
+						<div class="uploder-name">
+							<a href="{{ url_for('users.Users', user_id=post.author.id) }}">
+							<h2>{{ post.author.username  | capitalize }}</h2>
+							</a>
+							<span>{{ post.date_posted.strftime('%b-%m-%Y') }}</span>
+						</div>
+					</div>
+					<div class="post-content">
+						<div class="p-title">
+							<h4>{{ post.title }}</h4>
+						</div>
+						<div class="p-content">
+							<p>{{ post.content }}</p>
+						</div>
+					</div>
+					<div class="reaction-tag mb-3">
+						{% if post.author == current_user %}
+            				<a class="btn btn-secondary btn-sm mt-1 mb-1" href="{{ url_for('posts.update_post', post_id=post.id) }}">Update</a>
+            				<button type="button" class="btn btn-danger btn-sm m-1" data-toggle="modal" data-target="#deleteModal">Delete</button>
+            			{% endif %}
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+		    <div class="modal-dialog" role="document">
+    		  <div class="modal-content">
+        		<div class="modal-header">
+        		  <h5 class="modal-title" id="deleteModalLabel">Delete Post</h5>
+          			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          			  <span aria-hidden="true">&times;</span>
+          			</button>
+        		</div>
+      			<div class="modal-body">
+      				<p>Are you sure to delete a post?</p>
+      			</div>
+        		<div class="modal-footer">
+         			<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          				<form action="{{ url_for('posts.delete_post', post_id=post.id) }}" method="POST">
+          				  <input class="btn btn-danger" type="submit" value="Delete">
+          				</form>
+        			</div>
+      			</div>
+    		</div>
+  		</div>
+	</section>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+{% endblock content %}

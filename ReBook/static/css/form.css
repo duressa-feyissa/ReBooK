@@ -1,0 +1,153 @@
+div.form {
+	max-width: 600Px;
+	border: 1px solid wheat;
+	color: wheat;
+	border-radius: 5%;
+	background-color: #272727;
+	opacity: 0.7;
+	box-sizing: border-box;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 60px;
+	padding: 20px;
+}
+
+div#formIntro h1 {
+	text-align: center;
+	font-weight: bold;
+	color: wheat;
+	border-radius: 10px;
+}
+
+#formIntro, .row_1, .row_2, .row_3, .row_4, .row_5, .row_6 {
+	flex: 100%;
+	margin-top: 10px;
+	height: auto;
+}  
+
+div#formIntro {
+	padding: 5px 0px;
+	border: 1px solid wheat;
+	border-radius: 10px;
+	margin-bottom: 15px;
+}
+
+.form-range {
+	width: 40%;
+}
+
+label {
+	color: floralwhite;
+	font-size: 20px;
+	padding-right: 20px;
+	font-size: 20px;
+	font-weight: bold;
+	font-family: "Raleway", sans-serif;
+  	-webkit-text-stroke-width: 0.5px;
+  	-webkit-text-stroke-color: #222;
+}
+
+.form-control {
+	display: inline;
+	width: 75% !important;
+}
+
+#option_value {
+	display: inline;
+	width: 40% !important;
+	margin-left: 30px;
+}
+
+#options {
+	display: inline;
+	width: 23% !important;	
+}
+
+#sort {
+	display: inline;
+	width: 130px !important;	
+}
+
+#Submit {
+	margin-right: 30px;
+}
+
+.hide {
+	display: none !important;
+}
+
+div.content-section {
+	margin-top: 60px;
+	margin-right: auto;
+	margin-left: auto;
+	max-width: 650px;
+	border: 1px solid wheat;
+	color: wheat;
+	border-radius: 5%;
+	background-color: #272727;
+	opacity: 0.7;
+	box-sizing: border-box;
+	padding: 20px;
+}
+
+
+div.picture {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 20Px 0px;
+}
+
+div.picture div.pic img {
+	width: 100px;
+	height:100px;
+	border-radius: 50%;
+	margin-bottom: 10px;
+}
+
+div.picture div.pic h3 {
+	font-size: 35px;
+	margin-bottom: 15px;
+}
+
+div.form-group {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: start;
+	margin-bottom: 15px;
+}
+
+.form-control-label{
+	display: block;
+	flex: 100%;
+}
+
+input.form-control {
+	flex: 100%;
+	display: block;
+}
+
+.bio {
+	resize: none;
+	width: 100% !important;
+}
+
+div.logout {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+@media (max-width: 500px) {
+	div.content-section {
+		max-width: 400px;
+		border-radius: 2%;
+	}
+}
+

@@ -1,0 +1,130 @@
+div.containers {
+ 	margin: 15px auto;
+ 	height: auto;
+ 	display: flex;
+ 	justify-content: center;
+ 	align-items: flex-start;
+ 	padding: 4px;
+ 	flex-wrap: wrap;
+ 	min-width: 400px;
+ 	position: relative;
+}
+
+div.main-post {
+ 	height: 800px;
+ 	width: 600px;
+ 	min-width: 400px;
+ 	margin-right: 30px;
+}
+
+
+div.post {
+	width: 98%;
+	margin: 2px auto 45px;
+	height: auto;
+ 	border: 1px solid wheat;
+	border-radius: 3%;
+ 	background-color: #272727;
+ 	opacity: 0.7;
+}
+
+div.uploading-header {
+	width: 98%;
+	height: 90px;
+	display: flex;
+	align-items: center;
+}
+
+div.uploader-image {
+	width: 65px;
+	height: 65px;
+	margin: auto 20px;
+}
+
+div.uploader-image img{
+	border-radius: 50%;
+	border: none;
+	opacity: 1 !important;
+	object-fit: fill;
+	width: 65px;
+	height: 65px;
+}
+
+div.uploder-name {
+	min-width: 50%;
+	width: auto;
+	height: 65px;
+	color: whitesmoke;
+}
+
+div.uploder-name h2 {
+	margin-bottom: 0px;
+} 
+
+div.uploder-name a {
+	text-decoration: none;
+	color: whitesmoke;
+}
+
+div.uploading-content, div.post-content {
+	height: auto;
+	width: 90%;
+	margin: 20px auto;
+}
+
+div.u-title {
+	min-width: 98%;
+	min-height: 30px;
+	margin: 20px auto;
+	color: whitesmoke;
+}
+
+div.p-title {
+	min-width: 98%;
+	min-height: 30px;
+	margin: 10px auto;
+	color: whitesmoke;
+}
+
+div.p-content {
+	min-width: 98%;
+	min-height: 40px;
+	margin: 3px auto;
+	color: whitesmoke;
+}
+
+div.post_by_user {
+	margin: 10px auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+ 	background-color: #272727;
+ 	opacity: 0.7;
+}
+
+div.post_by_user  h2 {
+	color: wheat;
+}
+
+@media (max-width: 800px) {
+	div.main-post {
+		margin-right: auto;
+		margin-left: auto;
+	}
+}
+
+@media (max-width: 1000px) {
+	div.right-side-post {
+		display: none;
+	}		
+	
+	div.containers {
+		overflow: inherit;
+	}
+}
+
+div.pagination {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

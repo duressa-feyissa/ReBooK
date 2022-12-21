@@ -1,0 +1,140 @@
+{% extends "index.html" %}
+{% block add_data %}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/post.css') }}">
+{% endblock %}
+{% block content %}
+	<section id="search">
+		<div class="containers">
+			<div class="main-post">
+				<div class="uploading">
+					<form method="POST" action="" id="form_post">
+					{{ form.hidden_tag() }}
+					<div class="uploading-header">
+						<div class="uploader-image">
+							<a href="{{ url_for('users.Users', user_id=current_user.id) }}">
+							<img src="{{ image }}">
+							</a>
+						</div>
+						<div class="uploder-name">
+							<a href="{{ url_for('users.Users', user_id=current_user.id) }}">
+							<h2>{{ current_user.username | capitalize }}</h2>
+							</a>
+							<span>{{ time.strftime('%b-%d-%Y') }}</span>
+						</div>
+					</div>
+					<div class="uploading-content">
+						<div class="u-title">
+						{% if form.title.errors %}
+							{{ form.title(class="form-control form-control-lg is-invalid") }}
+							<div class="invalid-feedback">
+								{% for error in form.title.errors %}
+									<span>{{ error }}</span>
+								{% endfor %}
+							</div>
+						{% else %}
+							{{ form.title(class="form-title", placeholder="Title") }} 
+						{% endif %}
+						</div>
+						<div class="u-content">
+						{% if form.content.errors %}
+							{{ form.content(class="form-control form-control-lg is-invalid") }}
+							<div class="invalid-feedback">
+								{% for error in form.content.errors %}
+									<span>{{ error }}</span>
+								{% endfor %}
+							</div>
+						{% else %}
+							{{ form.content(class="form-content", placeholder="Content") }}
+						{% endif %}
+						</div>
+					</div>
+					<div class="uploading-tag">
+							{{ form.post(class="btn btn-outline-light", id="sub") }}
+					</div>
+					</form>
+				</div>
+				<div class="source">
+					<a class="make-friend" href="{{ url_for('users.Searcher') }}" title="Search For User"><img src="{{ url_for('static', filename='images/' + 'followers.png') }}"></a>
+					<a class="make-friend" href="{{ url_for('books.Library') }}" title="Go To Library"><img src="{{ url_for('static', filename='images/' + 'read.png') }}"></a>
+					<a class="make-friend" href="{{ url_for('main.About') }}" title="About Us"><img src="{{ url_for('static', filename='images/' + 'about.png') }}"></a>
+				</div>
+				{% for post in posts.items %}
+				<div class="post">		
+					<div class="uploading-header">
+						<div class="uploader-image">
+							<a href="{{ url_for('users.Users', user_id=post.author.id) }}">
+							<img src="../static/images/{{ post.author.image }}">
+							</a>
+						</div>
+						<div class="uploder-name">
+							<a href="{{ url_for('users.Users', user_id=post.author.id) }}">
+							<h2>{{ post.author.username  | capitalize }}</h2>
+							</a>
+							<span>{{ post.date_posted.strftime('%b-%m-%Y') }}</span>
+						</div>
+					</div>
+					<div class="post-content">
+						<div class="p-title">
+							<a href="{{ url_for('posts.post', post_id=post.id) }}">
+							<h4>{{ post.title }}</h4>
+							</a>
+						</div>
+						<div class="p-content">
+							<p>{{ post.content | replace("\n", "<br/>" | safe ) }}</p>
+						</div>
+					</div>
+					<div class="reaction-tag">
+					</div>
+				</div>
+				{% endfor %}
+				<div class="pagination">
+					{% for page in posts.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
+						{% if page %}
+							{% if posts.page == page %}
+								<a class="btn btn-outline-info m-1" href="{{ url_for('posts.Posts', page=page) }}">{{ page }}</a>
+							{% else %}
+								<a class="btn btn-outline-secondary m-1" href="{{ url_for('posts.Posts', page=page) }}">{{ page }}</a>
+							{% endif %}
+      					{% else %}
+        					...
+      					{% endif %}
+    				{% endfor %}
+    			</div>
+			</div>
+			<div class="right-side-post">
+				<div class="profile">
+					<div class="profile-images">
+						<img src="{{ image }}">
+					</div>
+					<div class="profile-name">
+						<h2>{{ current_user.username | capitalize }}</h2>
+					</div>
+					<div class="profile-status">
+						<p>{{ followers }} followers</p>
+						<p>{{ following }} following</p>
+					</div>
+				</div>
+				<br>
+				<div class="friends">
+					<div class="friend-legend">
+						<h2>Follow</h2>
+					</div>
+					{% for user in current_user.followed[:4] %}
+					<div class="friend">
+						<div class="friend-img">
+							<a href="{{ url_for('users.Users', user_id=user.id) }}">
+								<img src="{{ url_for('static', filename='images/' + user.image) }}">
+							</a>
+						</div>					
+						<div class="friend-name">
+							<a href="{{ url_for('users.Users', user_id=user.id) }}">
+								<h3>{{ user.username | capitalize }}</h3>
+							</a>
+						</div>	
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock content %}

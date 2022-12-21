@@ -1,0 +1,66 @@
+{% extends "index.html" %}
+{% block add_data %}
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/search.css') }}">
+{% endblock %}
+{% block content %}
+	<section id="search">
+		<div class="seach-container">
+			<div class="searching">
+				<form method="POST" action="" id="form_post">
+				{{ form.hidden_tag() }}
+					<div class="searching-header">
+						<div class="search-img-name">
+							<div class="search-image">
+								<a href="{{ url_for('users.Users', user_id=current_user.id) }}">
+								<img src="{{ image }}">
+								</a>
+							</div>
+							<div class="search-name">
+								<a href="{{ url_for('users.Users', user_id=current_user.id) }}">
+								<h2>{{ current_user.username | capitalize }}</h2>
+								</a>
+								<span>{{ time.strftime('%b-%d-%Y') }}</span>
+							</div>
+						</div>
+						<div class="search">
+						{% if form.search.errors %}
+							{{ form.search(class="form-control form-control-lg is-invalid") }}
+							<div class="invalid-feedback">
+								{% for error in form.search.errors %}
+									<span>{{ error }}</span>
+								{% endfor %}
+							</div>
+						{% else %}
+							{{ form.search(class="form-search", placeholder="Search") }} 
+						{% endif %}
+						</div>
+					</div>
+					<div class="searching-tag">
+						{{ form.find(class="btn btn-outline-light", id="sub") }}
+					</div>
+				</form>
+			</div>
+			<div class="show-follow">
+				{% if not users %}
+				<div class="show-text">
+					<h3>Not Found!</h3>
+				</div>
+				{% endif %}
+				{% for user in users %}
+				<div class="show-friends">
+					<div class="show-friends-img">
+						<a href="{{ url_for('users.Users', user_id=user.id) }}">
+						<img src="{{ url_for('static', filename='images/' + user.image) }}">
+						</a>
+					</div>
+					<div class="show-friends-name">
+						<a href="{{ url_for('users.Users', user_id=user.id) }}">
+						<h2>{{user.username | capitalize}}</h2>
+						</a>
+					</div>
+				</div>
+				{% endfor %}			
+			</div>
+		</div>
+	</section>
+{% endblock content %}
