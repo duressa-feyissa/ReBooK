@@ -9,7 +9,8 @@ ReBook makes personalized book recommendations for each user based on the user's
 
 We hope ReBook helps you find new books to love! Enjoy exploring our library of books and let us know what you think. Happy reading!
 
-
+## DEMO
+[https://rebook.duresa.tech](http://rebook.duresa.tech:5000/)
 ### Install Requirements
 ```bash
 pip3 install -r requirements.txt
