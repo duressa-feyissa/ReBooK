@@ -23,4 +23,13 @@ pip install email_validator
 python3 run.py
 ```
 
+## Screenshots
+![landing](images/landing-min.png)
+![custom search](images/custom search-min.png)
+![search](images/search-min.png)
+![register](images/register-min.png)
+![login](images/login-min.png)
+![blog](images/blog-min.png)
+![library](images/library-min.png)
+
 Made in Ethiopia by [BisRy](https://github.com/bisryy) and [Duresa](https://github.com/duressa-feyissa) for [ALx](https://alx.app) Project.
