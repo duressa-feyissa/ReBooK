@@ -13,18 +13,20 @@ We hope ReBook helps you find new books to love! Enjoy exploring our library of 
 [https://rebook.duresa.tech](http://rebook.duresa.tech:5000/)
 ### Install Requirements
 ```bash
-pip3 install -r requirements.txt
-pip install flask -U
-pip install itsdangerous==2.0.1
-pip install email_validator
+./script.sh
 ```
 
 ### Run the Application locally
 ```
-python3 run.p
+In order to run the app your have create a google account and generate application password.
+It is used to send verification email to users.
+Otherwise it generate error.
+```
+```
+Commad: ./run.sh [YOUR EMAIL] [YOUR APP PASSWORD]
 ```
 
-Your ReBook flask Application is Running on `http://127.0.0.1:5001`
+Your ReBook flask Application is Running on `http://0.0.0.1:5001`
 ## Screenshots
 ![landing](images/landing-min.png)
 ![custom search](images/custom-search-min.png)
