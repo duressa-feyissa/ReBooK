@@ -19,7 +19,7 @@ users = Blueprint('users', __name__)
 def send_verification_email(user_dictionary, expires_sec=180):
 	s = Serializer(current_app.config['SECRET_KEY'], expires_sec)
 	token = s.dumps(user_dictionary).decode('utf-8')
-	msg = Message('Email Verification', sender="noreply@demo.com",
+	msg = Message('Email Verification', sender=os.getenv("EMAIL", None),
 		recipients=[user_dictionary['email']])
 	msg.body = f"""
 
@@ -138,7 +138,7 @@ def Searcher():
 def send_reset_email(user):
 	token = user.get_reset_token()
 	msg = Message('Password Reset Request',
-		sender="noreply@demo.com",
+		sender=os.getenv("EMAIL", None),
 		recipients=[user.email]
 		)
 	msg.body = f"""
