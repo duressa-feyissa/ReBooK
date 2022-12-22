@@ -27,7 +27,7 @@ python3 run.py
 Your ReBook flask Application is Running on `http://127.0.0.1:5001`
 ## Screenshots
 ![landing](images/landing-min.png)
-![custom search](images/custom search-min.png)
+![custom search](images/custom-search-min.png)
 ![search](images/search-min.png)
 ![register](images/register-min.png)
 ![login](images/login-min.png)
