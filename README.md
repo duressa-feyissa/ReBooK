@@ -21,7 +21,7 @@ pip install email_validator
 
 ### Run the Application locally
 ```
-python3 run.py
+python3 run.p
 ```
 
 Your ReBook flask Application is Running on `http://127.0.0.1:5001`
