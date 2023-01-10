@@ -30,7 +30,7 @@
 ### Run The Application
 >In order to run the app your have create a google account and generate application password.
 >It is used to send verification email to users.
->>Otherwise it generate error.
+>>Otherwise it generates error.
 
 <details open>
  <summary>
@@ -69,8 +69,10 @@ After getting your Application password run the following command by replacing `
 ```
 
 Your ReBook flask Application is Running on ` http://0.0.0.1:5001 `
-
+<details>
+  <summary>
 ## Screenshots
+  </summary>
 ![landing](images/landing-min.png)
 ![custom search](images/custom-search-min.png)
 ![search](images/search-min.png)
@@ -78,5 +80,5 @@ Your ReBook flask Application is Running on ` http://0.0.0.1:5001 `
 ![login](images/login-min.png)
 ![blog](images/blog-min.png)
 ![library](images/library-min.png)
-
+<details>
 Made in Ethiopia by [BisRy](https://github.com/bisryy) and [Duresa](https://github.com/duressa-feyissa) for [ALx](https://alx.app) Project.
