@@ -24,7 +24,7 @@ We hope ReBook helps you find new books to love! Enjoy exploring our library of 
 >It is used to send verification email to users.
 >>Otherwise it generate error.
 
-<details>
+<details open>
  <summary>
   Stepsteps to generate google gmail application password (Click to expand)
  </summary>
