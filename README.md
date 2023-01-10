@@ -34,7 +34,7 @@ We hope ReBook helps you find new books to love! Enjoy exploring our library of 
 
  >To generate a new password for an email program to access your Gmail account through IMAP or POP with two-step authentication enabled
  
->> 1. Select your profile icon in the upper-right corner of Gmail, then select Manage Google Account.
+>>1. Select your profile icon in the upper-right corner of Gmail, then select Manage Google Account.
 >> ![pro](https://www.lifewire.com/thmb/5jYYfe6_0LdDPkK9WkHI3MRjlD4=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/002_get-a-password-to-access-gmail-by-pop-imap-2-1171882-694a421d0e174036823a8c78070a7891.jpg)
  
 >> 2. Select Security in the left sidebar.
@@ -46,7 +46,7 @@ We hope ReBook helps you find new books to love! Enjoy exploring our library of 
 >> 4. Under Select app, choose Mail or Other (Custom name), then select a device.
 >> ![pro](https://www.lifewire.com/thmb/TVV66FqRVp3uMBjQHr4CTf1WZF0=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/005_get-a-password-to-access-gmail-by-pop-imap-2-1171882-4597fd9c463f4e2abd37af86acadf3ad.jpg)
 
->> 5. Select Generate.
+>> 5. Select Generate. <br>
 >> ![pro](https://www.lifewire.com/thmb/TVV66FqRVp3uMBjQHr4CTf1WZF0=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/005_get-a-password-to-access-gmail-by-pop-imap-2-1171882-4597fd9c463f4e2abd37af86acadf3ad.jpg)
 
 >> 6. Your password appears in a new window. Follow the on-screen instructions to complete the process, then select Done.
