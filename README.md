@@ -82,5 +82,5 @@ Your ReBook flask Application is Running on ` http://0.0.0.1:5001 `
 ![blog](images/blog-min.png)
 ![library](images/library-min.png)
   
-<details>
+</details>
 Made in Ethiopia by [BisRy](https://github.com/bisryy) and [Duresa](https://github.com/duressa-feyissa) for [ALx](https://alx.app) Project.
