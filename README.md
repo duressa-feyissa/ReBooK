@@ -38,8 +38,9 @@ We hope ReBook helps you find new books to love! Enjoy exploring our library of 
 
 </details>
 
+After getting your Application password run the following command by replacing `[YOUR EMAIL] [YOUR APP PASSWORD]` by your email and app password you created, respectively. 
 ```
-Commad: ./run.sh [YOUR EMAIL] [YOUR APP PASSWORD]
+./run.sh [YOUR EMAIL] [YOUR APP PASSWORD]
 ```
 
 Your ReBook flask Application is Running on `http://0.0.0.1:5001`
