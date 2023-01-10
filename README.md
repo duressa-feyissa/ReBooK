@@ -23,10 +23,11 @@ It is used to send verification email to users.
 Otherwise it generate error.
 
 `
-### Here are the teps to generate google gmail application password
-<summary>
- Create a Gmail Application-Specific Password
- <details>
+
+<details>
+ <summary>
+  ### Here are the teps to generate google gmail application password
+ </summary>
  To generate a new password for an email program to access your Gmail account through IMAP or POP with two-step authentication enabled:
     - Select your profile icon in the upper-right corner of Gmail, then select Manage Google Account.
     - Select Security in the left sidebar.
@@ -36,7 +37,6 @@ Otherwise it generate error.
     - Your password appears in a new window. Follow the on-screen instructions to complete the process, then select Done.
     - You will not see the password again, so type or paste the password into the email program immediately.
 </details>
-</summary>
 ```
 Commad: ./run.sh [YOUR EMAIL] [YOUR APP PASSWORD]
 ```
