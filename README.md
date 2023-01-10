@@ -16,11 +16,24 @@ We hope ReBook helps you find new books to love! Enjoy exploring our library of 
 ./script.sh
 ```
 
-### Run the Application locally
+## Run the Application locally
 ```
 In order to run the app your have create a google account and generate application password.
 It is used to send verification email to users.
 Otherwise it generate error.
+
+### Here are the teps to generate google gmail application password
+
+ Create a Gmail Application-Specific Password
+ To generate a new password for an email program to access your Gmail account through IMAP or POP with two-step authentication enabled:
+    - Select your profile icon in the upper-right corner of Gmail, then select Manage Google Account.
+    - Select Security in the left sidebar.
+    - Select App passwords under the Signing into Google section. You're then asked to confirm your Gmail login credentials.
+    - Under Select app, choose Mail or Other (Custom name), then select a device.
+    - Select Generate.
+    - Your password appears in a new window. Follow the on-screen instructions to complete the process, then select Done.
+    - You will not see the password again, so type or paste the password into the email program immediately.
+
 ```
 ```
 Commad: ./run.sh [YOUR EMAIL] [YOUR APP PASSWORD]
