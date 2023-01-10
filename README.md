@@ -2,11 +2,11 @@
   <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/logo-shadow.png" alt="Logo" width="150" height="150" />
 
 
-<h1 align="center">Rebook</h1>
+<h1 align="center">ReBook</h1>
 <h3 align="center">Get the Book you always wanted</h3>
-</p>
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)
+</p>
 
 <p align="center">
   <b>ReBook is a book recommendation website made with Python Flask. Our goal is to help everyone discover and explore new books in a fun and easy-to-use way. 
