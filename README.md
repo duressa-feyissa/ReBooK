@@ -71,7 +71,7 @@ After getting your Application password run the following command by replacing `
 Your ReBook flask Application is Running on ` http://0.0.0.1:5001 `
 <details>
   <summary>
-## Screenshots
+    <h3>Screenshots</h3>
   </summary>
 ![landing](images/landing-min.png)
 ![custom search](images/custom-search-min.png)
