@@ -36,22 +36,22 @@ We hope ReBook helps you find new books to love! Enjoy exploring our library of 
  
 >>1. Select your profile icon in the upper-right corner of Gmail, then select Manage Google Account.
 >> ![pro](https://www.lifewire.com/thmb/5jYYfe6_0LdDPkK9WkHI3MRjlD4=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/002_get-a-password-to-access-gmail-by-pop-imap-2-1171882-694a421d0e174036823a8c78070a7891.jpg)
- 
+> 
 >> 2. Select Security in the left sidebar.
 >> ![pro](https://www.lifewire.com/thmb/2cj_ju75ktcMDP51IT4moVOUi2w=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/003_get-a-password-to-access-gmail-by-pop-imap-2-1171882-eadfd723e3ef4600b8c92d4862688d61.jpg)
- 
+> 
 >> 3. Select App passwords under the Signing into Google section. You're then asked to confirm your Gmail login credentials.
 >> ![pro](https://www.lifewire.com/thmb/zCBI22fcPX6cBR7LDSfdI3Qx788=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/004_get-a-password-to-access-gmail-by-pop-imap-2-1171882-c250c452670344c58d8bf5bd830b8dfa.jpg)
- 
+> 
 >> 4. Under Select app, choose Mail or Other (Custom name), then select a device.
 >> ![pro](https://www.lifewire.com/thmb/TVV66FqRVp3uMBjQHr4CTf1WZF0=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/005_get-a-password-to-access-gmail-by-pop-imap-2-1171882-4597fd9c463f4e2abd37af86acadf3ad.jpg)
-
+>
 >> 5. Select Generate. <br>
 >> ![pro](https://www.lifewire.com/thmb/TVV66FqRVp3uMBjQHr4CTf1WZF0=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/005_get-a-password-to-access-gmail-by-pop-imap-2-1171882-4597fd9c463f4e2abd37af86acadf3ad.jpg)
-
+>
 >> 6. Your password appears in a new window. Follow the on-screen instructions to complete the process, then select Done.
 >> ![pro](https://www.lifewire.com/thmb/omrDSOD5t_DVGFhxITp--hU6X8g=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/007_get-a-password-to-access-gmail-by-pop-imap-2-1171882-b1b9848151a6477eae4778b5c4e4295a.jpg)
-
+>
 > <strong>Important!</strong> You will not see the password again, so type or paste the password into the email program immediately.
 >> ![pro](https://www.lifewire.com/thmb/TVV66FqRVp3uMBjQHr4CTf1WZF0=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/005_get-a-password-to-access-gmail-by-pop-imap-2-1171882-4597fd9c463f4e2abd37af86acadf3ad.jpg)
  
