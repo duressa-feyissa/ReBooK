@@ -1,10 +1,12 @@
 <p align="center">
+ 
 # ReBooK
 ## Get the Book you always wanted
 
 Welcome to ReBook!
 
 ReBook is a book recommendation website made with Python Flask. Our goal is to help everyone discover and explore new books in a fun and easy-to-use way. 
+
 </p>
 >ReBook makes personalized book recommendations for each user based on the user's profile and personal preferences. Users can search for books by author, genre or title, or simply browse our library of recommended titles. The site also allows users to post about their favorite book or the book they are reading while the can also follow a specific user post by following as and more. 
 
