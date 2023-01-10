@@ -17,16 +17,14 @@ We hope ReBook helps you find new books to love! Enjoy exploring our library of 
 ```
 
 ## Run the Application locally
-`
-In order to run the app your have create a google account and generate application password.
-It is used to send verification email to users.
-Otherwise it generate error.
 
-`
+>In order to run the app your have create a google account and generate application password.
+>It is used to send verification email to users.
+>>Otherwise it generate error.
 
 <details>
  <summary>
-  ### Here are the teps to generate google gmail application password
+  Stepsteps to generate google gmail application password
  </summary>
  To generate a new password for an email program to access your Gmail account through IMAP or POP with two-step authentication enabled:
     - Select your profile icon in the upper-right corner of Gmail, then select Manage Google Account.
