@@ -31,13 +31,13 @@
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#--project-idea-inspiration)
 
-## ➤ ➤ 💡 Project Idea Inspiration
+##   💡 Project Idea Inspiration
 > As avid readers and lifelong learners, we were constantly on the lookout for new and exciting books to add to our reading lists. However, we found it challenging to discover new titles beyond the bestseller lists and popular recommendations. That's when we had the idea to create a community where readers could share their favorite books and discover new ones through personalized recommendations.
 
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#--project-philosophy)
 
-## ➤  🧐 Project philosophy
+##   🧐 Project philosophy
 
 > ReBook is a webapp that connects readers from all over the world and allows them to share their reading interests and experiences. 
 > 
@@ -47,7 +47,7 @@
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#--tech-stack)
 
-## ➤ 👨‍💻 Tech stack
+##  👨‍💻 Tech stack
 
 Here's a brief high-level overview of the tech stack ReBook uses:
 
@@ -61,7 +61,7 @@ Here's a brief high-level overview of the tech stack ReBook uses:
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#--demo-project-links)
 
-## ➤  🖥 DEMO Project Links
+##   🖥 DEMO Project Links
 - [ReBook App](http://rebook.duresa.tech:5000/)
 - [App Github](https://github.com/BisRyy/ReBook)
 - [Website Live](https://read-book-rosy.vercel.app)
@@ -70,7 +70,7 @@ Here's a brief high-level overview of the tech stack ReBook uses:
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#--run-the-application-locally)
 
-## ➤ 💻 Run the Application locally
+##  💻 Run the Application locally
 
 ### Install Requirements
 ```bash
@@ -128,28 +128,19 @@ Your ReBook flask Application is Running on ` http://0.0.0.1:5001 `
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#-website-setup)
 
-## ➤ 🌍 Website Setup
+##  🌍 Website Setup
 Download [Node.js](https://nodejs.org/en/download/).
 Run this followed commands:
 
 ``` bash
 
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#install-dependencies-only-the-first-time)
-
-# ➤ Install dependencies (only the first time)
+#  Install dependencies (only the first time)
 npm install
 
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#run-the-local-server-at-localhost8080)
-
-# ➤ Run the local server at localhost:8080
+#  Run the local server at localhost:8080
 npm run dev
 
-
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#build-for-production-in-the-dist-directory)
-
-# ➤ Build for production in the dist/ directory
+#  Build for production in the dist/ directory
 npm run build
 
 ```
@@ -158,7 +149,7 @@ npm run build
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#-spread-the-word)
 
-# ➤ 🌟 Spread the word!
+#  🌟 Spread the word!
 
 If you want to say thank you and/or support active development of the ReBook:
 
@@ -172,13 +163,14 @@ Thanks so much for your interest in growing the reach of the ReBook!
 
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#-license)
 
-# ➤ ⚠️ License
+#  ⚠️ License
 
-The ReBook is free and open-source software licensed under the GNU General Public License v3.0. All designs and implementations were created by [BisRy](https://github.com/bisryy) and [Duresa](https://github.com/duressa-feyissa) and distributed under Creative Commons license (CC BY-SA 4.0 International).
+The ReBook is free and open-source software licensed under the GNU General Public License v3.0. All designs and implementations were created by [Bisrat](https://github.com/bisryy) and [Duresa](https://github.com/duressa-feyissa) and distributed under Creative Commons license (CC BY-SA 4.0 International).
 
+<br>
 <details>
   <summary>
-    <h3>Screenshots</h3>
+    🖼 Screenshots
   </summary>
   
 ![landing](images/landing-min.png)
@@ -189,10 +181,16 @@ The ReBook is free and open-source software licensed under the GNU General Publi
 ![blog](images/blog-min.png)
 ![library](images/library-min.png)
   
-</details>
+</details><br>
 
-&copy; Made in Ethiopia by [BisRy](https://github.com/bisryy) and [Duresa](https://github.com/duressa-feyissa) for [ALx](https://alx.app) Project.
+&copy; Made in Ethiopia by [BisRy](https://bisry.me) and [Duresa](https://github.com/duressa-feyissa) for [ALx](https://alx.app) Project.
 
 
-<q align="center">A reader lives a thousand lives before he dies . . . The man who never reads lives only one. 
-</q> — George R.R. Martin
+<p align="center">
+
+> A reader lives a thousand lives before he dies . . . <br>The man who never reads lives only one. 
+ <br>
+
+>>> — George R.R. Martin
+ 
+ </p>
