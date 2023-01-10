@@ -24,17 +24,18 @@ We hope ReBook helps you find new books to love! Enjoy exploring our library of 
 
 <details>
  <summary>
-  Stepsteps to generate google gmail application password
+  Stepsteps to generate google gmail application password (Click to expand)
  </summary>
- To generate a new password for an email program to access your Gmail account through IMAP or POP with two-step authentication enabled:
-    - Select your profile icon in the upper-right corner of Gmail, then select Manage Google Account.
-    - Select Security in the left sidebar.
-    - Select App passwords under the Signing into Google section. You're then asked to confirm your Gmail login credentials.
-    - Under Select app, choose Mail or Other (Custom name), then select a device.
-    - Select Generate.
-    - Your password appears in a new window. Follow the on-screen instructions to complete the process, then select Done.
-    - You will not see the password again, so type or paste the password into the email program immediately.
+### To generate a new password for an email program to access your Gmail account through IMAP or POP with two-step authentication enabled:
+- Select your profile icon in the upper-right corner of Gmail, then select Manage Google Account.
+- Select Security in the left sidebar.
+- Select App passwords under the Signing into Google section. You're then asked to confirm your Gmail login credentials.
+- Under Select app, choose Mail or Other (Custom name), then select a device.
+- Select Generate.
+- Your password appears in a new window. Follow the on-screen instructions to complete the process, then select Done.
+- You will not see the password again, so type or paste the password into the email program immediately.
 </details>
+
 ```
 Commad: ./run.sh [YOUR EMAIL] [YOUR APP PASSWORD]
 ```
